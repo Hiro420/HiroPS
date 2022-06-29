@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option java_package = "emu.grasscutter.net.proto";
+
+import "WidgetCreateLocationInfo.proto";
+import "WidgetCreatorInfo.proto";
+
+message WidgetDoBagReq {
+	oneof op_info {
+		WidgetCreateLocationInfo location_info = 20;
+		WidgetCreatorInfo widget_creator_info = 21;
+	}
+	uint32 material_id = 7;
+}
